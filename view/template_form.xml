@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/notebook/page[@id='general']" position="after">
+        <page string="Min and Max qty" id="stock_min_max">
+            <group col="2" colspan="2" id="min">
+                <label name="uom_min"/>
+                <field name="uom_min"/>
+            </group>
+            <group col="2" colspan="2" id="max">
+                <label name="uom_max"/>
+                <field name="uom_max"/>
+            </group>
+        </page>
+    </xpath>
+</data>
