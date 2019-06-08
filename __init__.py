@@ -3,11 +3,11 @@
 # the full copyright notices and license terms.
 
 from trytond.pool import Pool
-from .product import *
+from . import product
 
 def register():
     Pool.register(
-        Template,
-        Product,
-        ProductMinMax,
+        product.Template,
+        product.Product,
+        product.ProductMinMax,
         module='stock_min_max', type_='model')

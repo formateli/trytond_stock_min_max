@@ -11,8 +11,7 @@ from trytond.modules.company.model import (
 __all__ = ['Product', 'Template', 'ProductMinMax']
 
 
-class Template:
-    __metaclass__ = PoolMeta
+class Template(metaclass=PoolMeta):
     __name__ = "product.template"
 
     uom_min = fields.Many2One('product.uom', 'UOM for min qty', states={
@@ -27,8 +26,7 @@ class Template:
         depends=['active', 'default_uom_category'])
 
 
-class Product(CompanyMultiValueMixin):
-    __metaclass__ = PoolMeta
+class Product(CompanyMultiValueMixin, metaclass=PoolMeta):
     __name__ = "product.product"
 
     quantity_min = fields.MultiValue(fields.Float('Min quantity limit'))
