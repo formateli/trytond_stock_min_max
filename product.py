@@ -1,19 +1,15 @@
 # This file is part of trytond-stock_min_max module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
-
 from trytond.pool import Pool, PoolMeta
 from trytond.model import ModelSQL, fields
 from trytond.pyson import Eval
 from trytond.modules.company.model import (
     CompanyMultiValueMixin, CompanyValueMixin)
 
-__all__ = ['Product', 'Template', 'ProductMinMax']
-
 
 class Template(metaclass=PoolMeta):
     __name__ = "product.template"
-
     uom_min = fields.Many2One('product.uom', 'UOM for min qty', states={
             'readonly': ~Eval('active'),
             },
